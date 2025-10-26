@@ -1,7 +1,7 @@
 site_name: OpenTelemetry + Rust + K6 Tutorial
 site_description: A comprehensive, production-ready tutorial demonstrating distributed observability with OpenTelemetry, Loki, Grafana, and Jaeger in Rust
-site_author: Your Name
-site_url: https://example.com/
+site_author: Shion1305
+site_url: https://Shion1305.github.io/otel-tutorial-rust/
 
 theme:
   name: material
@@ -27,8 +27,6 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  logo: assets/logo.png
-  favicon: assets/favicon.ico
   font:
     text: Roboto
     code: Roboto Mono
@@ -53,7 +51,6 @@ markdown_extensions:
 nav:
   - Home: getting-started/index.md
   - Getting Started:
-    - Welcome: getting-started/index.md
     - Quick Start: getting-started/quickstart.md
   - Guides:
     - Architecture: guides/architecture.md
@@ -73,9 +70,6 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com
-  analytics:
-    provider: google
-    property: G_XXXXXXXXXX
+      link: https://github.com/Shion1305/otel-tutorial-rust
 
 copyright: Copyright &copy; 2024 OpenTelemetry Tutorial
