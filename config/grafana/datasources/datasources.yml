@@ -1,0 +1,38 @@
+apiVersion: 1
+
+datasources:
+  # Loki data source
+  - name: Loki
+    type: loki
+    uid: loki
+    url: http://loki:3100
+    access: proxy
+    isDefault: false
+    jsonData:
+      maxLines: 1000
+
+  # Prometheus data source
+  - name: Prometheus
+    type: prometheus
+    uid: prometheus
+    url: http://prometheus:9090
+    access: proxy
+    isDefault: true
+    jsonData:
+      timeInterval: 15s
+
+  # Jaeger data source
+  - name: Jaeger
+    type: jaeger
+    uid: jaeger
+    url: http://jaeger:16686
+    access: proxy
+    isDefault: false
+    jsonData:
+      tracesToLogsV2:
+        datasourceUid: loki
+        mapTagNamesEnabled: false
+        spanStartTimeShift: 0
+        spanEndTimeShift: 0
+        logMessageField: log
+        logLevelField: level
