@@ -9,7 +9,7 @@ description = "OpenTelemetry + Rust + K6 Tutorial Documentation"
 readme = "README.md"
 requires-python = ">=3.8"
 authors = [
-    {name = "OpenTelemetry Tutorial", email = ""}
+    {name = "OpenTelemetry Tutorial", email = "shion1305@gmail.com"}
 ]
 license = {text = "MIT"}
 classifiers = [
