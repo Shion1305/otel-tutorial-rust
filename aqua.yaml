@@ -13,3 +13,4 @@ registries:
 packages:
 - name: casey/just@1.43.0
 - name: grafana/k6@v1.3.0
+- name: astral-sh/uv@0.9.5
