@@ -6,17 +6,41 @@
 /// - Track request/response metrics
 /// - Link logs across the entire request lifecycle
 
+use crate::metrics;
 use actix_web::{
     dev::{forward_ready, Service, ServiceRequest, ServiceResponse, Transform},
+    http::StatusCode,
     Error, HttpMessage,
 };
 use futures::future::LocalBoxFuture;
 use std::rc::Rc;
-use tracing::info;
+use tracing::{info, warn};
 use uuid::Uuid;
 
 /// Middleware that injects a request ID and creates a span for each request
 pub struct RequestIdMiddleware;
+
+fn normalize_endpoint(path: &str) -> String {
+    let mut parts = Vec::new();
+
+    for segment in path.split('/') {
+        if segment.is_empty() {
+            continue;
+        }
+
+        if segment.parse::<u64>().is_ok() || Uuid::parse_str(segment).is_ok() {
+            parts.push("{id}");
+        } else {
+            parts.push(segment);
+        }
+    }
+
+    if parts.is_empty() {
+        "/".to_string()
+    } else {
+        format!("/{}", parts.join("/"))
+    }
+}
 
 impl<S, B> Transform<S, ServiceRequest> for RequestIdMiddleware
 where
@@ -57,6 +81,7 @@ where
         let request_id = Uuid::new_v4().to_string();
         let method = req.method().to_string();
         let path = req.path().to_string();
+        let endpoint = normalize_endpoint(&path);
 
         // Insert request ID into request extensions
         req.extensions_mut().insert(request_id.clone());
@@ -76,19 +101,52 @@ where
         let start_time = std::time::Instant::now();
 
         let span_clone = span.clone();
+        let method_label = method.clone();
+        let endpoint_label = endpoint.clone();
+
+        metrics::track_request_start(&method_label, &endpoint_label);
 
         Box::pin(
             async move {
-                let res = service.call(req).await?;
-                let duration_ms = start_time.elapsed().as_millis();
-                let status = res.status();
+                let result = service.call(req).await;
+                let elapsed = start_time.elapsed();
+                let duration_ms = elapsed.as_millis() as u64;
 
-                span_clone.record("status", status.as_u16());
-                span_clone.record("duration_ms", duration_ms);
+                match result {
+                    Ok(res) => {
+                        let status = res.status();
 
-                info!("Request completed with status {}", status);
+                        span_clone.record("status", status.as_u16());
+                        span_clone.record("duration_ms", duration_ms);
 
-                Ok(res)
+                        metrics::track_request_result(
+                            &method_label,
+                            &endpoint_label,
+                            status.as_u16(),
+                            elapsed,
+                        );
+
+                        info!("Request completed with status {}", status);
+
+                        Ok(res)
+                    }
+                    Err(err) => {
+                        span_clone
+                            .record("status", StatusCode::INTERNAL_SERVER_ERROR.as_u16());
+                        span_clone.record("duration_ms", duration_ms);
+
+                        metrics::track_request_result(
+                            &method_label,
+                            &endpoint_label,
+                            StatusCode::INTERNAL_SERVER_ERROR.as_u16(),
+                            elapsed,
+                        );
+
+                        warn!("Request failed: {}", err);
+
+                        Err(err)
+                    }
+                }
             }
             .instrument(span),
         )

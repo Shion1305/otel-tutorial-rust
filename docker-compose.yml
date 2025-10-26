@@ -56,6 +56,8 @@ services:
       - "--config.file=/etc/prometheus/prometheus.yml"
     networks:
       - observability
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   # Grafana - Visualization and dashboarding
   grafana:

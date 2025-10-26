@@ -21,3 +21,10 @@ scrape_configs:
     static_configs:
       - targets: ['loki:3100']
     metrics_path: '/metrics'
+
+  # Application metrics scraped from the host
+  - job_name: 'rust-app'
+    metrics_path: '/metrics'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:8080']

@@ -16,6 +16,10 @@ opentelemetry-jaeger = { version = "0.19", features = ["rt-tokio"] }
 opentelemetry_sdk = { version = "0.20", features = ["trace", "rt-tokio"] }
 tracing-opentelemetry = "0.21"
 
+# Metrics
+once_cell = "1.19"
+prometheus = "0.13"
+
 # HTTP & Web
 actix-web = "4.4"
 actix-rt = "2.9"

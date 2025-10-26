@@ -1,12 +1,14 @@
-use actix_web::{web, App, HttpServer, middleware};
+use actix_web::{middleware, web, App, HttpServer};
 use opentelemetry::global;
 use tracing::info;
 
 mod handlers;
 mod custom_middleware;
 mod observability;
+mod metrics;
 
 use observability::setup_telemetry;
+use metrics::metrics_handler;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -20,6 +22,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .wrap(middleware::Logger::default())
             .wrap(custom_middleware::RequestIdMiddleware)
+            .route("/metrics", web::get().to(metrics_handler))
             .service(
                 web::scope("/api")
                     .route("/health", web::get().to(handlers::health_check))
