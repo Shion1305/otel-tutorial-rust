@@ -1,2 +1,30 @@
+# Rust build artifacts
 /target
+Cargo.lock
+
+# IDE
 .idea
+.vscode
+*.swp
+*.swo
+
+# Python virtual environments
+venv/
+.venv/
+env/
+.env
+
+# MkDocs build output (deployed to gh-pages branch via GitHub Actions)
+/site/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db

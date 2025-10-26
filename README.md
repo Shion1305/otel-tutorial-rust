@@ -22,20 +22,28 @@ open http://localhost:9090    # Prometheus (raw metrics)
 
 ## 📚 Documentation
 
-| Document | Purpose |
-|----------|---------|
-| **[Getting Started](docs/getting-started/)** | Quick setup and introduction |
-| └─ [START_HERE.md](docs/getting-started/START_HERE.md) | Main entry point |
-| └─ [QUICKSTART.md](docs/getting-started/QUICKSTART.md) | 5-minute setup guide |
-| **[Guides](docs/guides/)** | Deep learning materials |
-| └─ [ARCHITECTURE.md](docs/guides/ARCHITECTURE.md) | Complete architecture reference |
-| └─ [TECH-STACK.md](docs/guides/TECH-STACK.md) | How each component works |
-| └─ [ONBOARDING.md](docs/guides/ONBOARDING.md) | Structured learning path |
-| └─ [RUN_K6_TEST.md](docs/guides/RUN_K6_TEST.md) | Load testing guide |
-| └─ [K6_SUMMARY.md](docs/guides/K6_SUMMARY.md) | K6 integration overview |
-| **[Reference](docs/reference/)** | Quick lookup |
-| └─ [REFERENCE.md](docs/reference/REFERENCE.md) | Commands and queries |
-| └─ [PROJECT_CONTENTS.txt](docs/reference/PROJECT_CONTENTS.txt) | Complete file listing |
+### 🌐 View Full Documentation Website
+
+The documentation is now published as a professional MkDocs website!
+
+**[View Documentation Website →](https://yourusername.github.io/otel-tutorial-rust/)**
+
+Or serve locally:
+```bash
+mkdocs serve
+# Visit http://localhost:8000
+```
+
+### 📖 Documentation Files
+
+| Section | Files |
+|---------|-------|
+| **Getting Started** | [Welcome](docs/getting-started/index.md) • [Quick Start](docs/getting-started/quickstart.md) |
+| **Learning Guides** | [Architecture](docs/guides/architecture.md) • [Tech Stack](docs/guides/tech-stack.md) • [Onboarding](docs/guides/onboarding.md) • [K6 Testing](docs/guides/k6-testing.md) • [MkDocs Setup](docs/guides/mkdocs-setup.md) |
+| **Reference** | [Commands](docs/reference/commands.md) • [Project Contents](docs/reference/project-contents.md) • [Troubleshooting](docs/reference/troubleshooting.md) |
+| **API Docs** | [Endpoints](docs/api/endpoints.md) • [Examples](docs/api/examples.md) |
+
+See [DOCS_SETUP.md](DOCS_SETUP.md) for documentation system setup instructions.
 
 ## 📁 Project Structure
 

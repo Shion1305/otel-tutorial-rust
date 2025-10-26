@@ -1,0 +1,81 @@
+site_name: OpenTelemetry + Rust + K6 Tutorial
+site_description: A comprehensive, production-ready tutorial demonstrating distributed observability with OpenTelemetry, Loki, Grafana, and Jaeger in Rust
+site_author: Your Name
+site_url: https://example.com/
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - toc.integrate
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: getting-started/index.md
+  - Getting Started:
+    - Welcome: getting-started/index.md
+    - Quick Start: getting-started/quickstart.md
+  - Guides:
+    - Architecture: guides/architecture.md
+    - Tech Stack: guides/tech-stack.md
+    - Onboarding: guides/onboarding.md
+    - K6 Load Testing: guides/k6-testing.md
+    - K6 Summary: guides/k6-summary.md
+    - MkDocs Setup: guides/mkdocs-setup.md
+  - Reference:
+    - Commands & URLs: reference/commands.md
+    - Project Contents: reference/project-contents.md
+    - Troubleshooting: reference/troubleshooting.md
+  - API Documentation:
+    - Endpoints: api/endpoints.md
+    - Examples: api/examples.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com
+  analytics:
+    provider: google
+    property: G_XXXXXXXXXX
+
+copyright: Copyright &copy; 2024 OpenTelemetry Tutorial

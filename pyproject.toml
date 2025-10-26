@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "otel-tutorial-docs"
+version = "1.0.0"
+description = "OpenTelemetry + Rust + K6 Tutorial Documentation"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    {name = "OpenTelemetry Tutorial", email = ""}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Documentation",
+    "Topic :: Software Development :: Documentation",
+]
+
+dependencies = [
+    "mkdocs>=1.4.0",
+    "mkdocs-material>=9.0.0",
+    "pymdown-extensions>=10.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "mkdocs-awesome-pages-plugin>=2.9.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/otel-tutorial-rust"
+Documentation = "https://yourusername.github.io/otel-tutorial-rust/"
+Repository = "https://github.com/yourusername/otel-tutorial-rust.git"
