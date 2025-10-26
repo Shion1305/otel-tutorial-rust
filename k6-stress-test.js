@@ -46,7 +46,7 @@ export const options = {
 };
 
 export default function () {
-  activeUsers.set(1);
+  activeUsers.add(1);
   requestCounter.add(1);
 
   // Group 1: Health Check
