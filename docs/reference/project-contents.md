@@ -97,39 +97,39 @@ PROJECT LOCATION:
 
 📚 DOCUMENTATION (8 files, ~50,000 words total)
 ────────────────────────────────────────────────────────────────────────────
-  START_HERE.md
+  [Getting Started Index](../getting-started/index.md)
     • Main entry point
     • 3-step quick start
     • Learning path overview
     • File navigation guide
 
-  QUICKSTART.md
+  [Quick Start](../getting-started/QUICKSTART.md)
     • 5-minute setup guide
     • Step-by-step instructions
     • Troubleshooting section
     • Common issues & solutions
 
-  TECH-STACK.md
+  [Tech Stack](../guides/TECH-STACK.md)
     • Architecture deep dive
     • Traces, spans, logs, metrics explained
     • Component descriptions
     • Data flow diagrams
     • Performance characteristics
 
-  ONBOARDING.md
+  [Onboarding Guide](../guides/ONBOARDING.md)
     • Structured learning journey
     • 4-phase learning path
     • Hands-on exercises
     • Key concepts explained
 
-  README.md
+  [Architecture Guide](../guides/ARCHITECTURE.md)
     • Complete reference documentation
     • Architecture overview
     • Project structure explanation
     • API endpoint documentation
     • Advanced topics & patterns
 
-  REFERENCE.md
+  [Commands Reference](../reference/commands.md)
     • Quick lookup guide
     • URLs and ports table
     • API commands (curl examples)
@@ -137,9 +137,9 @@ PROJECT LOCATION:
     • LogQL and PromQL examples
     • Common issues table
 
-  RUN_K6_TEST.md (see Load Testing section)
+  [K6 Testing Guide](../guides/k6-testing.md) (see Load Testing section)
 
-  K6_SUMMARY.md (see Load Testing section)
+  [K6 Summary](../guides/k6-summary.md) (see Load Testing section)
 
 ═══════════════════════════════════════════════════════════════════════════════
 
@@ -216,7 +216,7 @@ CORE TECHNOLOGIES
 
 QUICK REFERENCE - HOW TO USE
 ────────────────────────────
-  1. Read:    START_HERE.md
+  1. Read:    [Getting Started](../getting-started/index.md)
   2. Setup:   docker-compose up -d
   3. Run:     RUST_LOG=info ./target/release/otel-tutorial
   4. Test:    ./START_K6_TEST.sh
@@ -305,14 +305,14 @@ FOR PRODUCTION USE
 
 NEXT STEPS
 ──────────
-  1. Read START_HERE.md (main guide)
-  2. Follow QUICKSTART.md (5-minute setup)
+  1. Read [Getting Started](../getting-started/index.md) (main guide)
+  2. Follow [Quick Start](../getting-started/QUICKSTART.md) (5-minute setup)
   3. Run docker-compose up -d
   4. Start the application
   5. Execute ./START_K6_TEST.sh
   6. Monitor data in Grafana/Jaeger/Prometheus
-  7. Read RUN_K6_TEST.md for detailed analysis
-  8. Explore TECH-STACK.md for deep understanding
+  7. Read [K6 Testing](../guides/k6-testing.md) for detailed analysis
+  8. Explore [Tech Stack](../guides/TECH-STACK.md) for deep understanding
   9. Modify and extend for your use cases
   10. Apply patterns to your own projects
 
@@ -333,8 +333,8 @@ PROJECT GOAL ACHIEVED
 
 Your complete observability learning platform is ready!
 
-Start with: START_HERE.md
-Then:       QUICKSTART.md
+Start with: [Getting Started](../getting-started/index.md)
+Then:       [Quick Start](../getting-started/QUICKSTART.md)
 Next:       ./START_K6_TEST.sh
 
 Happy observability learning! 🚀

@@ -29,9 +29,9 @@ classifiers = [
 ]
 
 dependencies = [
-    "mkdocs>=1.4.0",
-    "mkdocs-material>=9.0.0",
-    "pymdown-extensions>=10.0.0",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.6.22",
+    "pymdown-extensions>=10.14.1",
 ]
 
 [project.optional-dependencies]

@@ -15,10 +15,10 @@ This tutorial guides you through building a complete observability stack for a R
 
 ## Quick Navigation
 
-- [**Quick Start**](getting-started/quickstart.md) - Get the application running in 5 minutes
-- [**Architecture**](guides/architecture.md) - Understand the system design
-- [**Tech Stack**](guides/tech-stack.md) - Deep dive into technologies used
-- [**Onboarding Guide**](guides/onboarding.md) - Structured learning path with exercises
+- [**Quick Start**](getting-started/QUICKSTART.md) - Get the application running in 5 minutes
+- [**Architecture**](guides/ARCHITECTURE.md) - Understand the system design
+- [**Tech Stack**](guides/TECH-STACK.md) - Deep dive into technologies used
+- [**Onboarding Guide**](guides/ONBOARDING.md) - Structured learning path with exercises
 - [**K6 Load Testing**](guides/k6-testing.md) - Master load testing and performance analysis
 - [**API Documentation**](api/endpoints.md) - Complete API reference
 
@@ -44,7 +44,7 @@ This tutorial guides you through building a complete observability stack for a R
 
 ## Getting Started
 
-To get started immediately, jump to the [Quick Start](getting-started/quickstart.md) guide. For a more structured approach, follow the [Onboarding Guide](guides/onboarding.md).
+To get started immediately, jump to the [Quick Start](getting-started/QUICKSTART.md) guide. For a more structured approach, follow the [Onboarding Guide](guides/ONBOARDING.md).
 
 All instructions include:
 - Command-by-command setup
@@ -60,4 +60,4 @@ All instructions include:
 
 ---
 
-**Ready to dive in?** Start with the [Quick Start](getting-started/quickstart.md) or explore the [full guides](guides/architecture.md).
+**Ready to dive in?** Start with the [Quick Start](getting-started/QUICKSTART.md) or explore the [full guides](guides/ARCHITECTURE.md).

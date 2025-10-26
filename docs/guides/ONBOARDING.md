@@ -7,13 +7,13 @@ Welcome! This guide walks you through your observability learning path step-by-s
 ```
 Start Here
    ↓
-1. [QUICKSTART.md] ← Run everything in 5 minutes
+1. [Quick Start](../getting-started/QUICKSTART.md) ← Run everything in 5 minutes
    ↓
 2. [This File] ← Understand the pieces
    ↓
-3. [TECH-STACK.md] ← Deep dive into how it works
+3. [Tech Stack](../guides/TECH-STACK.md) ← Deep dive into how it works
    ↓
-4. [README.md] ← Advanced usage and troubleshooting
+4. [Architecture](../guides/ARCHITECTURE.md) ← Advanced usage and troubleshooting
    ↓
 5. [Source Code] ← Read and modify the implementation
    ↓
@@ -69,7 +69,7 @@ All visible in → Grafana (unified dashboard)
 
 ### Phase 1: "Show Me It Works" (5 min) 📦
 
-**File**: `QUICKSTART.md`
+**File**: [Quick Start](../getting-started/QUICKSTART.md)
 
 What you'll do:
 1. Start Docker containers
@@ -81,7 +81,7 @@ What you'll do:
 
 ### Phase 2: "Explain How It Works" (15 min) 🔍
 
-**File**: `TECH-STACK.md`
+**File**: [Tech Stack](../guides/TECH-STACK.md)
 
 What you'll learn:
 1. What does each component do?
@@ -105,7 +105,7 @@ What you'll read:
 
 ### Phase 4: "Deep Dive" (optional) 🚀
 
-**File**: `README.md`
+**File**: [Architecture](../guides/ARCHITECTURE.md)
 
 Advanced topics:
 - Custom spans for complex flows
@@ -240,10 +240,11 @@ curl http://localhost:8080/api/health
 ```
 📁 /Users/shion/workspace/otel-tutorial-rust/
 │
-├── 🚀 QUICKSTART.md          [Start here! 5 min]
-├── 📚 TECH-STACK.md           [How it all works]
-├── 📖 README.md               [Complete reference]
-├── 👋 ONBOARDING.md           [You are here!]
+├── 📚 docs/
+│   ├── 🚀 ../getting-started/QUICKSTART.md     [Start here! 5 min]
+│   ├── 📚 ../guides/TECH-STACK.md              [How it all works]
+│   ├── 📖 ../guides/ARCHITECTURE.md            [Complete reference]
+│   └── 👋 ../guides/ONBOARDING.md              [You are here!]
 │
 ├── 🔧 src/
 │   ├── main.rs                [App entry point]
@@ -265,19 +266,19 @@ curl http://localhost:8080/api/health
 ## Recommended Reading Order
 
 ### First Time (30 min)
-1. This file (ONBOARDING.md) → you are here
-2. QUICKSTART.md → get it running
+1. This file (Onboarding) → you are here
+2. [Quick Start](../getting-started/QUICKSTART.md) → get it running
 3. Do Exercise 1 & 2 above
-4. TECH-STACK.md (just overview sections)
+4. [Tech Stack](../guides/TECH-STACK.md) (just overview sections)
 
 ### Getting Deeper (1-2 hours)
-1. TECH-STACK.md (complete read)
+1. [Tech Stack](../guides/TECH-STACK.md) (complete read)
 2. Source code walkthrough (start with src/observability.rs)
 3. Do Exercise 3
-4. README.md sections on "Understanding the Code"
+4. [Architecture](../guides/ARCHITECTURE.md) sections on "Understanding the Code"
 
 ### Production Ready (ongoing)
-1. README.md "Advanced Topics"
+1. [Architecture](../guides/ARCHITECTURE.md) "Advanced Topics"
 2. Official docs: opentelemetry.io
 3. Build your own service with this setup
 4. Add metrics collection
@@ -297,7 +298,7 @@ A: They each do one thing well. Together they give you complete visibility.
 A: OpenTelemetry is vendor-agnostic. Replace any component.
 
 **Q: How do I add metrics?**
-A: See README.md section "Advanced Topics → Adding Metrics"
+A: See [Architecture](../guides/ARCHITECTURE.md) section "Advanced Topics → Adding Metrics"
 
 **Q: How do multiple services trace together?**
 A: Trace IDs are passed between services (see trace context spec)
@@ -308,26 +309,26 @@ A: Trace IDs are passed between services (see trace context spec)
 
 Check these off as you progress:
 
-- [ ] Completed QUICKSTART.md
+- [ ] Completed Quick Start
 - [ ] Saw logs in Grafana
 - [ ] Saw traces in Jaeger
 - [ ] Understood the architecture
-- [ ] Read TECH-STACK.md
+- [ ] Read Tech Stack
 - [ ] Modified and recompiled the code
 - [ ] Read and understood src/observability.rs
 - [ ] Read and understood src/handlers.rs
-- [ ] Completed README.md
+- [ ] Completed Architecture Guide
 - [ ] Created a custom dashboard in Grafana
 
 ---
 
 ## When You Get Stuck
 
-1. **Check QUICKSTART.md troubleshooting section**
+1. **Check [Quick Start](../getting-started/QUICKSTART.md) troubleshooting section**
 2. **Check docker-compose is running**: `docker-compose ps`
 3. **Check app is running**: Look for "Server running on" message
 4. **Check logs**: `docker-compose logs loki` or similar
-5. **Read README.md Troubleshooting section**
+5. **Read [Troubleshooting](../reference/troubleshooting.md) section**
 
 ---
 
@@ -374,13 +375,13 @@ Master them one at a time, and you'll be expert in observability in no time!
 ## Your Onboarding Checklist
 
 - [ ] Understand the problem (why observability matters)
-- [ ] Run QUICKSTART.md
+- [ ] Run [Quick Start](../getting-started/QUICKSTART.md)
 - [ ] See data in all three systems (logs, traces, metrics)
-- [ ] Understand the architecture (TECH-STACK.md)
+- [ ] Understand the architecture ([Tech Stack](../guides/TECH-STACK.md))
 - [ ] Read the source code
 - [ ] Modify something and see it reflected
 - [ ] Feel confident explaining observability to others
 
 When all are checked, you're ready to apply this to real projects!
 
-Start with QUICKSTART.md now! 🚀
+Start with [Quick Start](../getting-started/QUICKSTART.md) now! 🚀

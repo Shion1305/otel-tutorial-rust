@@ -1,7 +1,7 @@
 site_name: OpenTelemetry + Rust + K6 Tutorial
 site_description: A comprehensive, production-ready tutorial demonstrating distributed observability with OpenTelemetry, Loki, Grafana, and Jaeger in Rust
 site_author: Shion Ichikawa
-site_url: https://Shion1305.github.io/otel-tutorial-rust/
+site_url: https://otel-rust-tutorial.shion.pro/
 
 theme:
   name: material
@@ -52,14 +52,13 @@ nav:
   - Home: index.md
   - Getting Started:
     - Overview: getting-started/index.md
-    - Quick Start: getting-started/quickstart.md
+    - Quick Start: getting-started/QUICKSTART.md
   - Guides:
-    - Architecture: guides/architecture.md
-    - Tech Stack: guides/tech-stack.md
-    - Onboarding: guides/onboarding.md
+    - Architecture: guides/ARCHITECTURE.md
+    - Tech Stack: guides/TECH-STACK.md
+    - Onboarding: guides/ONBOARDING.md
     - K6 Load Testing: guides/k6-testing.md
     - K6 Summary: guides/k6-summary.md
-    - MkDocs Setup: guides/mkdocs-setup.md
   - Reference:
     - Commands & URLs: reference/commands.md
     - Project Contents: reference/project-contents.md

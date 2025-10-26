@@ -52,7 +52,7 @@ jobs:
           uv sync --python 3.12
 
       - name: Build documentation
-        run: uv run mkdocs build
+        run: uv run mkdocs build --strict
 
       - name: Upload artifact
         if: always()

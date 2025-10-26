@@ -28,10 +28,10 @@ PROJECT STRUCTURE:
      └── grafana/                   - Grafana provisioning
   
   📚 Documentation/
-     ├── ONBOARDING.md              - Your learning path (START HERE)
-     ├── QUICKSTART.md              - 5-minute setup guide
-     ├── TECH-STACK.md              - Deep dive into architecture
-     └── README.md                  - Complete reference
+     ├── ../guides/ONBOARDING.md       - Your learning path (START HERE)
+     ├── ../getting-started/QUICKSTART.md - 5-minute setup guide
+     ├── ../guides/TECH-STACK.md       - Deep dive into architecture
+     └── ../guides/ARCHITECTURE.md     - Complete reference
   
   🐳 Infrastructure/
      ├── docker-compose.yml         - Full observability stack
@@ -78,11 +78,11 @@ KEY CONCEPTS YOU'LL LEARN:
 
 LEARNING PATH:
 
-  1. Read ONBOARDING.md       (10 min) - Understand your journey
-  2. Follow QUICKSTART.md      (5 min) - Get everything running
-  3. Study TECH-STACK.md       (30 min) - Learn how it all works
-  4. Explore the source code   (30 min) - See the implementation
-  5. Read README.md            (30 min) - Deep dives and troubleshooting
+  1. Read [Onboarding Guide](../guides/ONBOARDING.md)       (10 min) - Understand your journey
+  2. Follow [Quick Start](../getting-started/QUICKSTART.md)  (5 min) - Get everything running
+  3. Study [Tech Stack](../guides/TECH-STACK.md)             (30 min) - Learn how it all works
+  4. Explore the source code                              (30 min) - See the implementation
+  5. Read [Architecture Guide](../guides/ARCHITECTURE.md)    (30 min) - Deep dives and troubleshooting
 
 WHAT THE APPLICATION DOES:
 
@@ -185,8 +185,8 @@ TROUBLESHOOTING:
 
 NEXT STEPS:
 
-  1. ✅ Complete QUICKSTART.md and get everything running
-  2. ✅ Understand TECH-STACK.md concepts
+  1. ✅ Complete [Quick Start](../getting-started/QUICKSTART.md) and get everything running
+  2. ✅ Understand [Tech Stack](../guides/TECH-STACK.md) concepts
   3. ✅ Study the source code examples
   4. ✅ Create your own instrumented Rust service
   5. ✅ Add custom metrics and dashboards
@@ -214,7 +214,7 @@ PROJECT STATUS:
 SUPPORT:
 
   For issues or questions:
-    1. Check the relevant documentation file (QUICKSTART, TECH-STACK, README)
+    1. Check the relevant documentation file ([Quick Start](../getting-started/QUICKSTART.md), [Tech Stack](../guides/TECH-STACK.md), [Architecture](../guides/ARCHITECTURE.md))
     2. Review the source code (src/*.rs)
     3. Check docker-compose logs
     4. Consult official documentation for specific tools
@@ -223,7 +223,7 @@ SUPPORT:
 
 You now have everything you need to understand and use observability with Rust!
 
-Start with: QUICKSTART.md → TECH-STACK.md → README.md → Source Code
+Start with: [Quick Start](../getting-started/QUICKSTART.md) → [Tech Stack](../guides/TECH-STACK.md) → [Architecture](../guides/ARCHITECTURE.md) → Source Code
 
 Happy learning! 🚀
 

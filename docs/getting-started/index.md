@@ -137,11 +137,11 @@ A: Check the Quick Start troubleshooting section.
 
 ## Next Steps
 
-1. **Right now**: Follow [Quick Start](quickstart.md)
-2. **After that**: Read [Tech Stack](../guides/tech-stack.md)
+1. **Right now**: Follow [Quick Start](QUICKSTART.md)
+2. **After that**: Read [Tech Stack](../guides/TECH-STACK.md)
 3. **Then**: Explore the code in `src/`
 4. **Finally**: Apply to your projects!
 
 ---
 
-**Ready to get started?** → [Go to Quick Start](quickstart.md)
+**Ready to get started?** → [Go to Quick Start](QUICKSTART.md)

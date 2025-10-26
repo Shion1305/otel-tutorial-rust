@@ -332,8 +332,8 @@ span.record("duration_ms", elapsed);
 
 ---
 
-**For more details, see the full documentation files:**
-- QUICKSTART.md - Get started fast
-- TECH-STACK.md - Understand the architecture
-- README.md - Complete reference
+**For more details, see the full documentation:**
+- [Quick Start](../getting-started/QUICKSTART.md) - Get started fast
+- [Tech Stack](../guides/TECH-STACK.md) - Understand the architecture
+- [Architecture Guide](../guides/ARCHITECTURE.md) - Complete reference
 
