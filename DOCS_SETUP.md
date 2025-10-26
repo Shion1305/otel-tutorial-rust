@@ -7,7 +7,7 @@ This project includes a complete MkDocs website with comprehensive documentation
 ### Option 1: View Online
 The documentation website is automatically deployed to GitHub Pages. Visit:
 ```
-https://yourusername.github.io/otel-tutorial-rust/
+https://Shion1305.github.io/otel-tutorial-rust/
 ```
 
 ### Option 2: Serve Locally
@@ -86,7 +86,7 @@ Specifies Python 3.12 for consistency.
 The `.github/workflows/deploy-docs.yml` workflow automatically:
 1. Builds the documentation when changes are pushed to `main`
 2. Deploys the built site to GitHub Pages
-3. Makes it available at `https://yourusername.github.io/otel-tutorial-rust/`
+3. Makes it available at `https://Shion1305.github.io/otel-tutorial-rust/`
 
 ## Features
 
@@ -144,7 +144,7 @@ uv sync --upgrade
 1. Ensure `.github/workflows/deploy-docs.yml` exists
 2. Push changes to main branch
 3. GitHub Actions automatically builds and deploys
-4. Access at `https://yourusername.github.io/otel-tutorial-rust/`
+4. Access at `https://Shion1305.github.io/otel-tutorial-rust/`
 
 ### Manual Deployment
 ```bash

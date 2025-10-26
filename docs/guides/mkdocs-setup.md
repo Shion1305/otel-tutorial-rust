@@ -96,7 +96,7 @@ Main configuration file for the documentation:
 site_name: OpenTelemetry + Rust + K6 Tutorial
 site_description: A comprehensive, production-ready tutorial...
 site_author: Your Name
-site_url: https://yourusername.github.io/otel-tutorial-rust/
+site_url: https://Shion1305.github.io/otel-tutorial-rust/
 
 theme:
   name: material
@@ -578,7 +578,7 @@ rm -rf site/ .venv
 
 ## Next Steps
 
-1. [View the live documentation](https://yourusername.github.io/otel-tutorial-rust/)
+1. [View the live documentation](https://Shion1305.github.io/otel-tutorial-rust/)
 2. [Customize the theme](#customization)
 3. [Add custom content](#markdown-extensions)
 

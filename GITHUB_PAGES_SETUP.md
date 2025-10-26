@@ -29,7 +29,7 @@ This document explains how the documentation website is set up and deployed.
          │
          └─ 3. Deploy: to gh-pages branch
               └─ GitHub Pages serves from gh-pages
-                 URL: https://yourusername.github.io/otel-tutorial-rust/
+                 URL: https://Shion1305.github.io/otel-tutorial-rust/
 ```
 
 ## 📋 What's in Each Branch
@@ -82,7 +82,7 @@ The workflow defined in `.github/workflows/deploy-docs.yml`:
 - Subsequent builds: ~30 seconds
 - Website updates automatically at:
   ```
-  https://yourusername.github.io/otel-tutorial-rust/
+  https://Shion1305.github.io/otel-tutorial-rust/
   ```
 
 ## 🛠️ Workflow File Explanation
@@ -201,7 +201,7 @@ To use a custom domain like `docs.yourdomain.com`:
 1. **Add DNS record:**
    - Type: CNAME
    - Name: docs
-   - Value: yourusername.github.io
+   - Value: Shion1305.github.io
 
 2. **Update mkdocs.yml:**
    ```yaml

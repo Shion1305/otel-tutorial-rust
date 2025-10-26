@@ -87,7 +87,7 @@ pip install mkdocs mkdocs-material pymdown-extensions
 Created `.github/workflows/deploy-docs.yml` that:
 - Automatically builds the documentation on push to main
 - Deploys to GitHub Pages
-- Updates the live website at `https://yourusername.github.io/otel-tutorial-rust/`
+- Updates the live website at `https://Shion1305.github.io/otel-tutorial-rust/`
 - Includes artifact preservation for debugging
 
 ### 5. **Documentation Setup Guide**
@@ -129,7 +129,7 @@ git commit -m "Update documentation"
 git push origin main
 
 # GitHub Actions automatically builds and deploys
-# Access at: https://yourusername.github.io/otel-tutorial-rust/
+# Access at: https://Shion1305.github.io/otel-tutorial-rust/
 ```
 
 ## 📊 Features Included
@@ -241,7 +241,7 @@ nav:
 
 3. Access your docs at:
    ```
-   https://yourusername.github.io/otel-tutorial-rust/
+   https://Shion1305.github.io/otel-tutorial-rust/
    ```
 
 ### Manual Deployment Options
@@ -348,7 +348,7 @@ git push origin main
    - Save
 
 3. **Access Your Site**
-   - Visit: `https://yourusername.github.io/otel-tutorial-rust/`
+   - Visit: `https://Shion1305.github.io/otel-tutorial-rust/`
    - Wait 1-2 minutes for first build
 
 4. **Customize**

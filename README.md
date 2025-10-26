@@ -26,7 +26,7 @@ open http://localhost:9090    # Prometheus (raw metrics)
 
 The documentation is now published as a professional MkDocs website!
 
-**[View Documentation Website →](https://yourusername.github.io/otel-tutorial-rust/)**
+**[View Documentation Website →](https://Shion1305.github.io/otel-tutorial-rust/)**
 
 Or serve locally:
 ```bash
