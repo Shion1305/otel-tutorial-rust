@@ -332,7 +332,7 @@
       "pluginVersion": "10.2.0",
       "targets": [
         {
-          "expr": "{job=\"docker\"} | json",
+          "expr": "{job=\"rust-app\"} | json",
           "refId": "A"
         }
       ],
