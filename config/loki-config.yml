@@ -3,7 +3,6 @@ auth_enabled: false
 ingester:
   chunk_idle_period: 3m
   max_chunk_age: 1h
-  max_streams_per_user: 10000
   chunk_retain_period: 1m
 
 limits_config:
@@ -26,8 +25,8 @@ server:
 
 storage_config:
   boltdb_shipper:
-    active_index_directory: /loki/boltdb-shipper-active
-    cache_location: /loki/boltdb-shipper-cache
+    active_index_directory: /loki/index
+    cache_location: /loki/cache
     shared_store: filesystem
   filesystem:
     directory: /loki/chunks
