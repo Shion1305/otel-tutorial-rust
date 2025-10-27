@@ -68,13 +68,15 @@ docker-compose down -v
 
 ### Exploring Logs (Loki)
 1. Explore → Select "Loki"
-2. Query: `{job="docker", container="otel-tutorial"}`
+2. Query: `{job="rust-app"} | json`
 3. Press Shift+Enter
 
 ### Exploring Metrics (Prometheus)
 1. Explore → Select "Prometheus"
-2. Query: `up` (shows service status)
+2. Query: `sum(rate(http_requests_total[1m]))` (requests/sec)
 3. Press Shift+Enter
+4. Need raw text? `http://localhost:8080/metrics`
+5. Linux users: update the Prometheus target in `config/prometheus.yml` if `host.docker.internal` is unavailable.
 
 ## Jaeger
 
@@ -92,22 +94,22 @@ docker-compose down -v
 
 ```logql
 # All logs from your service
-{job="docker", container="otel-tutorial"}
+{job="rust-app"}
 
 # Only INFO level logs
-{job="docker", container="otel-tutorial"} | level="INFO"
+{job="rust-app"} | level="INFO"
 
 # Only ERROR level logs
-{job="docker", container="otel-tutorial"} | level="ERROR"
+{job="rust-app"} | level="ERROR"
 
 # Search for specific message
-{job="docker", container="otel-tutorial"} |= "User created"
+{job="rust-app"} |= "User created"
 
 # Count logs per level
-count by (level) ({job="docker", container="otel-tutorial"})
+count by (level) ({job="rust-app"})
 
 # Parse JSON and filter
-{job="docker", container="otel-tutorial"} | json | user_id="123"
+{job="rust-app"} | json | user_id="123"
 ```
 
 ## Prometheus Queries (PromQL)
@@ -117,13 +119,16 @@ count by (level) ({job="docker", container="otel-tutorial"})
 up
 
 # Request rate (requests per second)
-rate(requests_total[5m])
+sum(rate(http_requests_total[5m]))
 
 # Error rate
-rate(requests_total{status=~"5.."}[5m])
+sum(rate(http_requests_total{status=~"5.."}[5m]))
 
 # Request duration (95th percentile)
-histogram_quantile(0.95, request_duration_seconds)
+histogram_quantile(
+  0.95,
+  sum(rate(http_request_duration_seconds_bucket[5m])) by (le)
+)
 
 # Jaeger service status
 jaeger_collector_spans_received_total
@@ -336,4 +341,3 @@ span.record("duration_ms", elapsed);
 - [Quick Start](../getting-started/QUICKSTART.md) - Get started fast
 - [Tech Stack](../guides/TECH-STACK.md) - Understand the architecture
 - [Architecture Guide](../guides/ARCHITECTURE.md) - Complete reference
-

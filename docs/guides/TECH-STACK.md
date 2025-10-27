@@ -176,19 +176,18 @@ async fn my_function() { ... }
 
 **How logs flow to Loki:**
 ```
-1. Rust app → info!("message") → stdout (JSON)
-2. Docker captures stdout
-3. Promtail reads container logs
-4. Promtail sends to Loki via HTTP (port 3100)
-5. Loki indexes with labels
-6. Grafana queries Loki
+1. Rust app writes JSON logs to logs/app.log
+2. Host log folder is mounted read-only into the Promtail container
+3. Promtail tails the file and attaches labels (job="rust-app")
+4. Promtail pushes batches to Loki over HTTP (port 3100)
+5. Loki indexes the entries for Grafana queries
 ```
 
 **Loki's Query Language (LogQL):**
 ```
-{job="docker", container="otel-tutorial"} | json
-{job="docker"} | level="ERROR"
-rate({job="docker"}[5m])  # error rate
+{job="rust-app"} | json
+{job="rust-app"} | level="ERROR"
+sum(rate({job="rust-app", status=~"5.."}[5m]))  # error rate
 ```
 
 ---
@@ -197,8 +196,8 @@ rate({job="docker"}[5m])  # error rate
 **What it is**: Agent that collects logs and sends to Loki
 
 **In this project:**
-- Reads logs from Docker containers
-- Parses and labels them
+- Tails the application log file mounted from the host (`/var/log/otel-tutorial/app.log`)
+- Parses JSON entries and applies labels (`job="rust-app"`, `env="dev"`)
 - Sends batches to Loki every few seconds
 
 **Configuration:**
@@ -207,16 +206,18 @@ clients:
   - url: http://loki:3100/loki/api/v1/push  # Where to send logs
 
 scrape_configs:
-  - job_name: docker
-    docker_sd_configs:
-      - host: unix:///var/run/docker.sock  # Read from Docker
+  - job_name: rust-app
+    static_configs:
+      - targets: [localhost]
+        labels:
+          env: dev
+          __path__: /var/log/otel-tutorial/app.log
 ```
 
 **What it does:**
-1. Discover containers via Docker API
-2. Extract logs from container stdout/stderr
-3. Add labels (container name, image, job)
-4. Push to Loki periodically
+1. Tail the mounted application log file
+2. Add labels for environment and job
+3. Push to Loki periodically
 
 ---
 
@@ -238,8 +239,11 @@ scrape_configs:
 **Prometheus query language (PromQL):**
 ```
 up  # is each service up? (1 = yes, 0 = no)
-rate(requests_total[5m])  # requests per second
-histogram_quantile(0.95, duration_seconds)  # p95 latency
+sum(rate(http_requests_total[5m]))  # requests per second
+histogram_quantile(
+  0.95,
+  sum(rate(http_request_duration_seconds_bucket[5m])) by (le)
+)  # p95 latency
 ```
 
 ---

@@ -63,7 +63,7 @@ curl -X POST http://localhost:8080/api/compute \
 1. Go to http://localhost:3000 (login: admin/admin)
 2. Click **Explore**
 3. Select **Loki** from datasource dropdown
-4. Enter query: `{job="docker", container="otel-tutorial"}`
+4. Enter query: `{job="rust-app"} | json`
 5. Click **Run query**
 
 You'll see all your application logs in JSON format!
@@ -80,7 +80,10 @@ You'll see spans for each operation with exact durations!
 1. Go to http://localhost:3000
 2. Click **Explore**
 3. Select **Prometheus**
-4. Try a simple query: `up` (shows which services are online)
+4. Try a simple query: `sum(rate(http_requests_total[1m]))` (requests/sec)
+5. Want raw metrics? Visit `http://localhost:8080/metrics`
+
+> **Note:** On Linux you may need to replace `host.docker.internal` with the host IP in `config/prometheus.yml` so Prometheus can scrape the application.
 
 ## What You're Seeing
 

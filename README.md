@@ -1,6 +1,7 @@
 # OpenTelemetry + Rust + K6 Load Testing Tutorial
 
-A comprehensive, production-ready tutorial demonstrating distributed observability with OpenTelemetry, Loki, Grafana, and Jaeger. Includes realistic load testing with k6.
+A comprehensive, production-ready tutorial demonstrating distributed observability with OpenTelemetry, Loki, Grafana,
+and Jaeger. Includes realistic load testing with k6.
 
 ## 🚀 Quick Start
 
@@ -29,6 +30,7 @@ The documentation is now published as a professional MkDocs website!
 **[View Documentation Website →](https://Shion1305.github.io/otel-tutorial-rust/)**
 
 Or serve locally:
+
 ```bash
 mkdocs serve
 # Visit http://localhost:8000
@@ -36,12 +38,12 @@ mkdocs serve
 
 ### 📖 Documentation Files
 
-| Section | Files |
-|---------|-------|
-| **Getting Started** | [Welcome](docs/getting-started/index.md) • [Quick Start](docs/getting-started/quickstart.md) |
+| Section             | Files                                                                                                                                                                                                                   |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Getting Started** | [Welcome](docs/getting-started/index.md) • [Quick Start](docs/getting-started/quickstart.md)                                                                                                                            |
 | **Learning Guides** | [Architecture](docs/guides/architecture.md) • [Tech Stack](docs/guides/tech-stack.md) • [Onboarding](docs/guides/onboarding.md) • [K6 Testing](docs/guides/k6-testing.md) • [MkDocs Setup](docs/guides/mkdocs-setup.md) |
-| **Reference** | [Commands](docs/reference/commands.md) • [Project Contents](docs/reference/project-contents.md) • [Troubleshooting](docs/reference/troubleshooting.md) |
-| **API Docs** | [Endpoints](docs/api/endpoints.md) • [Examples](docs/api/examples.md) |
+| **Reference**       | [Commands](docs/reference/commands.md) • [Project Contents](docs/reference/project-contents.md) • [Troubleshooting](docs/reference/troubleshooting.md)                                                                  |
+| **API Docs**        | [Endpoints](docs/api/endpoints.md) • [Examples](docs/api/examples.md)                                                                                                                                                   |
 
 See [DOCS_SETUP.md](DOCS_SETUP.md) for documentation system setup instructions.
 
@@ -86,18 +88,19 @@ otel-tutorial-rust/
 
 ## 🏗️ Tech Stack
 
-| Component | Purpose |
-|-----------|---------|
-| **Rust 2024** | Application language |
-| **Actix-web 4.4** | HTTP framework |
-| **OpenTelemetry 0.20** | Distributed tracing |
-| **Tracing 0.1** | Structured logging |
-| **Jaeger 1.41** | Trace storage & UI |
-| **Loki 2.9.3** | Log aggregation |
-| **Prometheus 2.48.0** | Metrics collection |
-| **Grafana 10.2.0** | Visualization |
-| **k6 (latest)** | Load testing |
-| **Docker Compose** | Orchestration |
+| Component              | Purpose              |
+|------------------------|----------------------|
+| **Rust 2024**          | Application language |
+| **Actix-web 4.4**      | HTTP framework       |
+| **OpenTelemetry 0.20** | Distributed tracing  |
+| **Tracing 0.1**        | Structured logging   |
+| **Jaeger 1.41**        | Trace storage & UI   |
+| **Loki 3.5.7**         | Log aggregation      |
+| **Promtail 3.5.7**     | Log collection       |
+| **Prometheus 2.48.0**  | Metrics collection   |
+| **Grafana 10.2.0**     | Visualization        |
+| **k6 (latest)**        | Load testing         |
+| **Docker Compose**     | Orchestration        |
 
 ## 🔧 API Endpoints
 
@@ -111,11 +114,11 @@ POST /api/compute            # Fibonacci (CPU-intensive)
 
 ## 📊 Monitoring Dashboards
 
-| Dashboard | URL | Purpose |
-|-----------|-----|---------|
-| **Grafana** | http://localhost:3000 | Logs + Metrics visualization |
-| **Jaeger** | http://localhost:16686 | Distributed trace visualization |
-| **Prometheus** | http://localhost:9090 | Raw metrics & queries |
+| Dashboard      | URL                    | Purpose                         |
+|----------------|------------------------|---------------------------------|
+| **Grafana**    | http://localhost:3000  | Logs + Metrics visualization    |
+| **Jaeger**     | http://localhost:16686 | Distributed trace visualization |
+| **Prometheus** | http://localhost:9090  | Raw metrics & queries           |
 
 All dashboards require **no login** - direct access enabled!
 
@@ -133,6 +136,7 @@ k6 run -u 50 -d 5m k6-stress-test.js
 ```
 
 The test covers:
+
 - Health checks
 - User CRUD operations
 - CPU-intensive work (fibonacci)
@@ -141,12 +145,14 @@ The test covers:
 ## 🎓 Learning Path
 
 **New to observability?**
+
 1. Read [START_HERE.md](docs/getting-started/START_HERE.md) (5 min)
 2. Follow [QUICKSTART.md](docs/getting-started/QUICKSTART.md) (5 min)
 3. Study [TECH-STACK.md](docs/guides/TECH-STACK.md) (30 min)
 4. Complete [ONBOARDING.md](docs/guides/ONBOARDING.md) exercises (1 hour)
 
 **Ready for details?**
+
 - Read [ARCHITECTURE.md](docs/guides/ARCHITECTURE.md)
 - Explore the source code
 - Run load tests and analyze results
@@ -154,18 +160,21 @@ The test covers:
 ## ⚡ Features
 
 ✨ **Production-Ready**
+
 - Proper error handling
 - Structured logging
 - Request correlation
 - Performance monitoring
 
 ✨ **Comprehensive**
+
 - Multiple test scenarios
 - Real-world patterns
 - Best practices
 - Complete documentation
 
 ✨ **Easy to Use**
+
 - Docker-based setup
 - Interactive launchers
 - No complex configuration
@@ -196,10 +205,12 @@ curl http://localhost:8080/api/health
 ## 📖 Documentation Organization
 
 ### Getting Started (`docs/getting-started/`)
+
 - [START_HERE.md](docs/getting-started/START_HERE.md) - Your main guide
 - [QUICKSTART.md](docs/getting-started/QUICKSTART.md) - Fast setup
 
 ### Learning Guides (`docs/guides/`)
+
 - [ARCHITECTURE.md](docs/guides/ARCHITECTURE.md) - Complete architecture reference
 - [TECH-STACK.md](docs/guides/TECH-STACK.md) - How each component works
 - [ONBOARDING.md](docs/guides/ONBOARDING.md) - Structured learning journey
@@ -207,6 +218,7 @@ curl http://localhost:8080/api/health
 - [K6_SUMMARY.md](docs/guides/K6_SUMMARY.md) - K6 integration overview
 
 ### Reference (`docs/reference/`)
+
 - [REFERENCE.md](docs/reference/REFERENCE.md) - Quick command lookup
 - [PROJECT_CONTENTS.txt](docs/reference/PROJECT_CONTENTS.txt) - File inventory
 - [PROJECT_SUMMARY.txt](docs/reference/PROJECT_SUMMARY.txt) - Detailed overview
@@ -237,6 +249,7 @@ open http://localhost:16686   # Jaeger
 ```
 
 Watch as:
+
 - Requests flow through your system
 - Logs appear in Grafana (Loki)
 - Traces appear in Jaeger
@@ -247,12 +260,14 @@ Watch as:
 Through hands-on examples, you'll learn:
 
 **Observability**
+
 - How distributed tracing captures request flow
 - How structured logging enables searching
 - How metrics measure system health
 - How to correlate all three
 
 **Best Practices**
+
 - Proper instrumentation patterns
 - Request correlation IDs
 - Meaningful span names
@@ -260,6 +275,7 @@ Through hands-on examples, you'll learn:
 - Production-ready error handling
 
 **Real-World Scenarios**
+
 - Load testing impact
 - Performance analysis
 - Error identification
@@ -272,6 +288,7 @@ This tutorial is provided as-is for educational purposes.
 ## 🤝 Contributing
 
 This is a learning resource. Feel free to:
+
 - Modify the code for your needs
 - Extend the API endpoints
 - Add new instrumentation
@@ -281,6 +298,7 @@ This is a learning resource. Feel free to:
 ## ❓ Questions?
 
 Refer to the comprehensive documentation:
+
 - **Getting Started?** → [START_HERE.md](docs/getting-started/START_HERE.md)
 - **Setup Issues?** → [QUICKSTART.md](docs/getting-started/QUICKSTART.md)
 - **Understanding Architecture?** → [TECH-STACK.md](docs/guides/TECH-STACK.md)

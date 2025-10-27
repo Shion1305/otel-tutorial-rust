@@ -135,7 +135,7 @@ curl -X POST http://localhost:8080/api/compute \
 ### Logs (Loki + Grafana)
 1. Open Grafana: http://localhost:3000 (admin/admin)
 2. Go to **Explore** → Select **Loki**
-3. Run a query: `{job="docker", container="otel-tutorial"}`
+3. Run a query: `{job="rust-app"} | json`
 4. See all logs from your application
 
 ### Traces (Jaeger)
@@ -148,8 +148,8 @@ curl -X POST http://localhost:8080/api/compute \
 1. Open Grafana: http://localhost:3000
 2. Go to **Explore** → Select **Prometheus**
 3. Query examples:
-   - `rate(http_requests_total[1m])` - Request rate
-   - `histogram_quantile(0.95, duration_seconds)` - P95 latency
+   - `sum(rate(http_requests_total[1m]))` - Request rate
+   - `histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))` - P95 latency
 
 ## Understanding the Code
 

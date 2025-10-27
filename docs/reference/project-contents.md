@@ -204,8 +204,8 @@ CORE TECHNOLOGIES
   Web Framework:    Actix-web 4.4
   Tracing:          OpenTelemetry 0.20
   Logging:          Tracing 0.1
-  Distributed Log:  Loki 2.9.3
-  Distributed Log:  Promtail 2.9.3
+  Distributed Log:  Loki 3.5.7
+  Log Collector:    Promtail 3.5.7
   Distributed Tracing:  Jaeger 1.41
   Metrics:          Prometheus 2.48.0
   Visualization:    Grafana 10.2.0

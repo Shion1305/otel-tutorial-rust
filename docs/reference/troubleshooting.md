@@ -175,8 +175,10 @@ TROUBLESHOOTING:
     $ docker-compose logs
     
   Can't see logs in Loki?
-    Wait 15 seconds for Promtail to collect, then refresh Grafana
-    
+    1. Ensure `logs/app.log` is being written (tail the file).
+    2. Check Promtail logs for errors: `docker-compose logs promtail`.
+    3. Confirm Grafana query uses `{job="rust-app"} | json`.
+
   Jaeger shows no traces?
     Check JAEGER_AGENT_HOST=localhost in your environment
     
