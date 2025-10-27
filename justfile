@@ -37,3 +37,7 @@ lint:
 # Run Rust type checks without building
 type-check:
     cargo check
+
+# Lint Markdown documentation
+lint-md:
+    npx --yes markdownlint-cli2 "README.md" "docs/**/*.md"

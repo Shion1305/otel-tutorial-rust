@@ -1,0 +1,12 @@
+config:
+  MD013: false        # Allow long lines (tables, URLs)
+  MD034: false        # Allow bare URLs commonly used in docs
+  MD036: false        # Allow emphasis headings used for styling
+  MD041: false        # Permit non-heading first lines in summary tables
+  MD022: false        # Allow headings without blank lines (existing docs)
+  MD031: false        # Allow missing blank lines around fenced code blocks
+  MD032: false        # Allow compact lists without surrounding blanks
+  MD009: false        # Ignore trailing spaces in preformatted tables
+  MD012: false        # Allow multiple blank lines where used for spacing
+  MD026: false        # Allow headings with trailing punctuation
+  MD040: false        # Do not require code fences to specify a language

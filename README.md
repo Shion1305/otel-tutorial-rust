@@ -49,7 +49,7 @@ See [DOCS_SETUP.md](DOCS_SETUP.md) for documentation system setup instructions.
 
 ## 📁 Project Structure
 
-```
+```text
 otel-tutorial-rust/
 ├── src/                          # Rust source code
 │   ├── main.rs                   # Application entry point
