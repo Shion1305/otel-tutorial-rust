@@ -10,12 +10,11 @@
 /// - Traces: Collection of spans that represent a complete operation
 /// - Metrics: Quantitative measurements
 /// - Logs: Textual information about events
-
 use std::sync::OnceLock;
 
 use tracing::info;
-use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt, EnvFilter};
 use tracing_appender::non_blocking::WorkerGuard;
+use tracing_subscriber::{EnvFilter, layer::SubscriberExt, util::SubscriberInitExt};
 
 static FILE_GUARD: OnceLock<WorkerGuard> = OnceLock::new();
 
@@ -67,8 +66,7 @@ fn init_tracing() {
         .json();
 
     // Create environment filter (respects RUST_LOG env var)
-    let env_filter = EnvFilter::try_from_default_env()
-        .unwrap_or_else(|_| EnvFilter::new("info"));
+    let env_filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info"));
 
     // Combine layers (without OTEL initially to avoid trait bounds issues)
     tracing_subscriber::registry()
@@ -89,6 +87,7 @@ fn init_tracing() {
 ///     // do work
 /// }.instrument(span).await;
 /// ```
+#[allow(dead_code)]
 pub fn create_span(name: &str) -> tracing::Span {
     tracing::info_span!(
         "operation",

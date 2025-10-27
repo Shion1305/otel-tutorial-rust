@@ -5,12 +5,11 @@
 /// - Create spans for HTTP requests
 /// - Track request/response metrics
 /// - Link logs across the entire request lifecycle
-
 use crate::metrics;
 use actix_web::{
-    dev::{forward_ready, Service, ServiceRequest, ServiceResponse, Transform},
-    http::StatusCode,
     Error, HttpMessage,
+    dev::{Service, ServiceRequest, ServiceResponse, Transform, forward_ready},
+    http::StatusCode,
 };
 use futures::future::LocalBoxFuture;
 use std::rc::Rc;
@@ -131,8 +130,7 @@ where
                         Ok(res)
                     }
                     Err(err) => {
-                        span_clone
-                            .record("status", StatusCode::INTERNAL_SERVER_ERROR.as_u16());
+                        span_clone.record("status", StatusCode::INTERNAL_SERVER_ERROR.as_u16());
                         span_clone.record("duration_ms", duration_ms);
 
                         metrics::track_request_result(

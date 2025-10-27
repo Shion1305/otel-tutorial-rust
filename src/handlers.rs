@@ -5,10 +5,9 @@
 /// - Add events and attributes to spans
 /// - Handle errors with proper tracing
 /// - Track performance metrics
-
-use actix_web::{web, HttpResponse, Result as ActixResult, error::ErrorInternalServerError};
+use actix_web::{HttpResponse, Result as ActixResult, error::ErrorInternalServerError, web};
 use serde::{Deserialize, Serialize};
-use tracing::{info, warn, debug, Instrument};
+use tracing::{Instrument, debug, info, warn};
 use uuid::Uuid;
 
 /// User data structure
@@ -167,6 +166,5 @@ fn compute_fib_recursive(n: u32) -> u64 {
     }
 
     debug!("Computing fib({})", n);
-    let result = compute_fib_recursive(n - 1) + compute_fib_recursive(n - 2);
-    result
+    compute_fib_recursive(n - 1) + compute_fib_recursive(n - 2)
 }

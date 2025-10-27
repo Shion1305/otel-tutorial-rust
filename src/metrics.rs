@@ -3,8 +3,8 @@ use std::time::Duration;
 use actix_web::{HttpResponse, Responder};
 use once_cell::sync::Lazy;
 use prometheus::{
-    register_histogram_vec, register_int_counter_vec, register_int_gauge_vec, Encoder, HistogramVec,
-    IntCounterVec, IntGaugeVec, TextEncoder,
+    Encoder, HistogramVec, IntCounterVec, IntGaugeVec, TextEncoder, register_histogram_vec,
+    register_int_counter_vec, register_int_gauge_vec,
 };
 
 static HTTP_REQUESTS_TOTAL: Lazy<IntCounterVec> = Lazy::new(|| {
@@ -66,7 +66,8 @@ pub async fn metrics_handler() -> impl Responder {
     let encoder = TextEncoder::new();
 
     if let Err(err) = encoder.encode(&metric_families, &mut buffer) {
-        return HttpResponse::InternalServerError().body(format!("failed to encode metrics: {err}"));
+        return HttpResponse::InternalServerError()
+            .body(format!("failed to encode metrics: {err}"));
     }
 
     HttpResponse::Ok()

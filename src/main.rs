@@ -1,14 +1,14 @@
-use actix_web::{middleware, web, App, HttpServer};
+use actix_web::{App, HttpServer, middleware, web};
 use opentelemetry::global;
 use tracing::info;
 
-mod handlers;
 mod custom_middleware;
-mod observability;
+mod handlers;
 mod metrics;
+mod observability;
 
-use observability::setup_telemetry;
 use metrics::metrics_handler;
+use observability::setup_telemetry;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -29,7 +29,7 @@ async fn main() -> std::io::Result<()> {
                     .route("/users", web::get().to(handlers::list_users))
                     .route("/users", web::post().to(handlers::create_user))
                     .route("/users/{id}", web::get().to(handlers::get_user))
-                    .route("/compute", web::post().to(handlers::compute_fibonacci))
+                    .route("/compute", web::post().to(handlers::compute_fibonacci)),
             )
     })
     .bind("127.0.0.1:8080")?
