@@ -28,3 +28,12 @@ docs-rebuild: docs-clean docs-build
 # Check for broken links in documentation (alias for docs-build)
 docs-check:
     uv run mkdocs build --strict
+
+# Run Rust format and lint checks
+lint:
+    cargo fmt --check
+    cargo clippy --all-targets --all-features -- -D warnings
+
+# Run Rust type checks without building
+type-check:
+    cargo check
