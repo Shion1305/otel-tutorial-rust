@@ -13,7 +13,7 @@ tracing-appender = "0.2"
 # OpenTelemetry
 opentelemetry = { version = "0.20" }
 opentelemetry-jaeger = { version = "0.19", features = ["rt-tokio"] }
-opentelemetry_sdk = { version = "0.20", features = ["trace", "rt-tokio"] }
+opentelemetry_sdk = { version = "0.32", features = ["trace", "rt-tokio"] }
 tracing-opentelemetry = "0.21"
 
 # Metrics
